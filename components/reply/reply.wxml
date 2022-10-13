@@ -1,0 +1,29 @@
+<!--components/reply/reply.wxml-->
+<view style="display: flex;justify-content: space-between;">
+    <text>评价 400万+</text>
+    <text>好评度96%</text>
+</view>
+<view class="tags">
+    <text class="text">流畅至极(16965)</text>
+    <text class="text">清晰度高(11127)</text>
+    <text class="text">设计一般(10808)</text>
+    <text class="text">颜色绚丽(8596)</text>
+    <text class="text">手感一流(5268)</text>
+</view>
+<view class="replay">
+    <view wx:for="{{replay}}" wx:key="index" style="padding: 25rpx 0 25rpx 0;">
+        <view style="display: flex; justify-content: space-between;">
+            <view style="display: flex; justify-content: space-between; align-items: center;">
+                <image style="width: 50rpx; height: 50rpx;" src="../../image/me.png"></image>
+                <text>{{item.name}}</text>
+            </view>
+            <text>{{item.time}}</text>
+        </view>
+        <view style="margin-top: 20rpx;">
+            <text>{{item.content}}</text>
+        </view>
+    </view>
+    <view style="display: flex; justify-content: center;">
+        <text style="text-align:center; border: 1px solid rgb(180, 174, 174); width: 200rpx; border-radius: 25px; ">查看全部评价</text>
+    </view>
+</view>

@@ -1,0 +1,4 @@
+/* pages/orders/orders.wxss */
+.color{
+    color: red;
+}

@@ -1,0 +1,18 @@
+<!--pages/classify/classify.wxml-->
+<view class="container">
+    <view class="content">
+        <scroll-view class="left_nav" scroll-y="true">
+            <view wx:for="{{leftBar}}" wx:key="index" data-child="{{item.children}}" data-index="{{index}}" bindtap="currentTabs" class="{{currentIndexNav === index ? 'active' : ''}} scroll-view-item">{{item.type_name}}</view>
+        </scroll-view>
+            <scroll-view class="right_nav" scroll-y="true">
+            <view class="secondClass" data-goodtypeid="{{item.good_type_id}}" bindtap="naviTo" wx:for="{{rightBar}}" wx:key="index">
+                <view>
+                    <image style="width: 70px; height: 70px; object-fit: cover;" src="{{item.pic}}"></image>
+                </view>
+                <view style="text-align: center;">
+                    {{item.type_name}}
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

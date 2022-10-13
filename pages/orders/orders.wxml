@@ -1,0 +1,10 @@
+<!--pages/orders/orders.wxml-->
+<view style="display: flex; justify-content: space-around; margin-top: 50rpx;">
+    <text bindtap="text" data-index="0" class="{{active == 0 ? 'color' : ''}}">全部</text>
+    <text bindtap="text" data-index="1" class="{{active == 1 ? 'color' : ''}}">待付款</text>
+    <text bindtap="text" data-index="2" class="{{active == 2 ? 'color' : ''}}">待收货</text>
+    <text bindtap="text" data-index="3" class="{{active == 3 ? 'color' : ''}}">已完成</text>
+</view>
+<view style="margin: 50rpx;" wx:for="{{orders}}" wx:key="index">
+    应付：￥{{item.money}}
+</view>

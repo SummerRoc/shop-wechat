@@ -1,0 +1,7 @@
+<!--pages/createOrder/createOrder.wxml-->
+<view class="title">
+    <text>￥{{money}}</text>
+</view>
+<view class="btn">
+    <text bindtap="payment">确认付款</text>
+</view>

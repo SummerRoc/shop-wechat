@@ -1,0 +1,137 @@
+/* pages/goodsDetail/goodsDetail.wxss */
+.swiper{
+    width: 390px;
+    height: 390px;
+}
+.container{
+    background: rgb(242,242,242);
+}
+.container1{
+    background: #fff;
+    padding: 25rpx;
+}
+.container2{
+    background: #fff;
+    margin-top: 25rpx;
+    padding: 25rpx;
+    display: flex;
+}
+.test1{
+    font-size: 11px; 
+    color: red; 
+    border: 1px solid red;
+}
+.test2{
+    margin-left: 25rpx; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+}
+.container3{
+    background: #fff;
+    padding: 25rpx;
+    display: flex;
+}
+.container4{
+    background: #fff;
+    padding: 25rpx;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: gray;
+}
+.container5{
+    background: #fff;
+    margin-top: 25rpx;
+    padding: 25rpx 50rpx 25rpx 25rpx;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+.page-container-view1{
+    display: flex;
+    padding: 30rpx;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 20;
+}
+.sku{
+    padding-left: 30rpx;
+    font-size: 14px;
+}
+.myNewTest1{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 15rpx;
+}
+.myNewTest2{
+    display: inline-block;
+    background: rgb(248, 243, 243);
+    padding: 2px 15px;
+    border-radius: 30px;
+    margin: 25rpx 0 25rpx 20rpx;
+    font-size: 13px;
+}
+.count{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30rpx;
+    font-size: 14px;
+  }
+  .num_wrap{
+    width: 220rpx;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-right: 50rpx;
+  }
+  .num_wrap .btn{
+    color: #333; 
+    padding: 0;
+    background: #fff;
+  }
+  .num_wrap input{
+    background: rgb(242,242,242);
+    text-align: center;
+    font-size: 24rpx;
+    width:500rpx;
+  }
+  .fitButton{
+      display: flex;
+      position: sticky;
+      bottom: 0;
+      background: #fff;
+      padding: 0 20px 30rpx 20px;
+  }
+  .textBtn{
+    color: #fff; 
+    border-radius: 30px; 
+    font-size: 14px;
+  }
+  .fitBottom{
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      align-items: center;
+      position: sticky;
+      bottom: 0;
+      font-size: 12px;
+      background: #fff;
+      padding: 25rpx 0;
+  }
+  .active {
+    color: red;
+    border: 1px solid red;
+} 
+.fix{
+    position: absolute;
+    color: red;
+    border-radius: 50%;
+    border: 1px solid red;
+    left: 35%;
+    bottom: 50rpx;
+    padding: 0 5rpx;
+}

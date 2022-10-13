@@ -1,0 +1,29 @@
+/* pages/classify/classify.wxss */
+.content{
+    display: flex;
+    height: calc(100vh);
+}
+.left_nav{
+    width: 200rpx;
+    height: calc(100vh);
+    background-color: rgb(248,248,248);
+    text-align: center;
+}
+.right_nav{
+    flex: 1;
+    height: calc(100vh);
+}
+.scroll-view-item{
+    /* margin: 10px 0; */
+    padding: 10px;
+    font-size: 13px;
+}
+.active {
+    color: red;
+    background-color: #fff;
+} 
+.secondClass{
+    display: inline-block;
+    padding: 30rpx;
+}
+ 

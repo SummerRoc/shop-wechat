@@ -1,0 +1,27 @@
+<!--pages/region/region.wxml-->
+<view style="display: flex;justify-content: space-around; padding: 25rpx 0;">
+  <text>字母排序</text>
+  <text>|</text>
+  <text>推荐排序</text>
+</view>
+
+<!-- 左侧菜单 -->
+<view class="menu">
+  <view wx:for="{{list}}" class="{{current.title==item.title?'menu_current':''}}" wx:key="index" bindtap="check" data-index="{{index}}">{{item.title}}</view>
+</view>
+<!-- 城市列表 -->
+
+<scroll-view scroll-y="true" bindscroll="scroll" style="height:90vh" scroll-into-view="{{id}}">
+  <!-- 选中的城市名字 -->
+  <view class="current_title">{{current.title}}</view>
+  <view wx:for="{{list}}" class="city_item" wx:key="index" id="id{{index}}">
+    <!-- 城市名字 -->
+    <view class="title">{{item.title}}</view>
+    <view class="citys">
+      <!-- 具体城市 -->
+      <view wx:for="{{item.children}}" wx:key="indexs" wx:for-item="items" wx:for-index="indexs">
+        {{items}}
+      </view>
+    </view>
+  </view>
+</scroll-view>

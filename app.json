@@ -1,0 +1,65 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/classify/classify",
+        "pages/found/found",
+        "pages/shoppingCart/shoppingCart",
+        "pages/my/my",
+        "pages/classifyDetail/classifyDetail",
+        "pages/payment/payment",
+        "pages/shipAddress/shipAddress",
+        "pages/goodsDetail/goodsDetail",
+        "pages/coupon/coupon",
+        "pages/addAddress/addAddress",
+        "pages/editAddress/editAddress",
+        "pages/cellPhone/cellPhone",
+        "pages/createOrder/createOrder",
+        "pages/orders/orders"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "京东商城",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#5c5e6b",
+        "selectedColor": "#f00",
+        "backgroundColor": "#fff",
+        "position": "bottom",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./image/home.png",
+                "selectedIconPath": "./image/home-hl.png"
+            },
+            {
+                "pagePath": "pages/classify/classify",
+                "text": "分类",
+                "iconPath": "./image/category.png",
+                "selectedIconPath": "./image/category-hl.png"
+            },
+            {
+                "pagePath": "pages/found/found",
+                "text": "发现",
+                "iconPath": "./image/explore.png",
+                "selectedIconPath": "./image/explore-hl.png"
+            },
+            {
+                "pagePath": "pages/shoppingCart/shoppingCart",
+                "text": "购物车",
+                "iconPath": "./image/cart.png",
+                "selectedIconPath": "./image/cart-hl.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "./image/me.png",
+                "selectedIconPath": "./image/me-hl.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

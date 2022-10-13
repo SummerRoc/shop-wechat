@@ -1,0 +1,15 @@
+/* components/reply/reply.wxss */
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+}
+.text{
+    background: rgb(252,237,235);
+    padding: 5px;
+    border-radius: 25px;
+    margin: 25rpx 25rpx 0 0;
+}
+.replay{
+    display: flex;
+    flex-direction: column;
+}

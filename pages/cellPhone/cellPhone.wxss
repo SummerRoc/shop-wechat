@@ -1,0 +1,27 @@
+/* pages/region/region.wxss */
+.citys{
+  margin: 50rpx 30rpx;
+}
+.citys view{
+  margin: 35rpx 0;
+}
+.menu{
+  position: fixed;
+  right: 30rpx;
+  top: 15%;
+  z-index: 100;
+}
+.menu_current{
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+.title{
+  background-color: #f7f7f7;
+  width: 100%;
+}
+.current_title{
+  position: fixed;  
+  background-color: #f7f7f7;
+  width: 100%;
+}

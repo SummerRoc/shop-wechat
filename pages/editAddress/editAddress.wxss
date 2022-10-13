@@ -1,0 +1,32 @@
+/* pages/addAddress/addAddress.wxss */
+.container{
+    padding: 0 40rpx;
+}
+.input{
+    flex: 1;
+    margin-left: 50rpx;
+}
+.test{
+    display: flex; 
+    border-top: 1px solid rgb(228, 220, 220);
+    padding: 25rpx 0;
+    font-size: 14px;
+    align-items: center;
+}
+.btn{
+    color: #fff;
+    background: rgb(241, 66, 66);
+    border-radius: 60rpx;
+    width: 100% !important;
+    margin: 0 !important;
+    margin-top: 50rpx !important;
+}
+.btn2{
+    color: red;
+    background: #fff;
+    border-radius: 60rpx;
+    width: 100% !important;
+    margin: 0 !important;
+    margin-top: 25rpx !important;
+    border: 1px solid red;
+}

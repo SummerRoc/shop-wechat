@@ -1,0 +1,50 @@
+<!--pages/shoppingCart/shoppingCart.wxml-->
+<view class="cart">
+    <view class='empty_wrap' wx:if='{{testArr.length == 0}}'>
+        <image class='empyt_icon' src='../../image/shop_cart.png'></image>
+        <text class='empyt_txt'>购物车空空如也，去逛逛吧~</text>
+    </view>
+    <view class="section">
+        <view class='content' wx:for="{{testArr}}" wx:key="index">
+            <view class='select_icon'>
+                <radio bindtap="select" data-index="{{index}}" value="{{item.good_name}}" checked="{{item.isChecked}}" style="transform: scale(0.7,0.7);"></radio>
+            </view>
+            <view class='goods' bindtap="aNewTest" data-item="{{item}}">
+                <image class='good_img' src='{{item.img}}'></image>
+                <view class='good_info'>
+                    <view class='good_title'>
+                        <text>{{item.good_name}}</text>
+                    </view>
+                    <view style="font-size: 14px;">
+                        <text wx:for="{{item.sku}}" wx:for-item="items" wx:for-index="indexs"  wx:key="indexs">{{items}}，</text>
+                        <text>官方...</text>
+                    </view>
+                    <view class='good_price'>
+                        <text class='price'>￥{{item.price}}</text>
+                        <view class="num_wrap">
+                            <button data-index="{{index}}" bindtap="subCount" disabled="{{item.num<=1}}" class='btn'>-</button>
+                            <input data-index="{{index}}" bindinput="inputCount" type='number' value="{{item.num}}" />
+                            <button data-index="{{index}}" bindtap="addCount" class='btn'>+</button>
+                        </view>
+                    </view>
+                    <view style="display: flex; justify-content: flex-end;">
+                        <button class="deleteBtn" data-shopCarId="{{item.shopping_car_id}}" bindtap="deleteShop">删除</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='fixBar'>
+        <view class='select_all' bindtap="selectAll">
+            <radio checked="{{selectAll}}" style="transform: scale(0.7,0.7);"></radio>
+            <text>全选</text>
+        </view>
+        <view class='total'>
+            <text>总计:</text>
+            <text class='money'>¥{{totalMoney}}</text>
+        </view>
+        <view class='btn_amount'>
+            <button disabled="{{testArr.length == 0 || isItemCheckd}}" bindtap="toPayMent">去结算({{totalCount}})</button>
+        </view>
+    </view>
+</view>

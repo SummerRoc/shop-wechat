@@ -1,0 +1,7 @@
+/* pages/my/my.wxss */
+.tips1{
+    background: rgb(252,239,246);
+    display: flex;
+    align-items: center;
+    padding: 25rpx;
+}

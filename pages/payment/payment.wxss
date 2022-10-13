@@ -1,0 +1,120 @@
+/* pages/payment/payment.wxss */
+.container1 {
+    padding: 0 50rpx 50rpx 50rpx;
+    background: #fff;
+}
+
+.address {
+    padding: 20rpx 50rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.goods {
+    width: 100%;
+    padding: 20rpx 10rpx;
+    border-radius: 8rpx;
+    display: flex;
+}
+
+.goods .good_img {
+    width: 30%;
+    height: 195rpx;
+}
+
+.good_info {
+    height: 195rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    margin-left: 25rpx;
+}
+
+.text1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-size: 24rpx;
+    color: rgb(226, 78, 78);
+    border: 1px solid rgb(226, 78, 78);
+    opacity: 0.8;
+}
+
+.good_title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-size: 28rpx;
+}
+
+.good_price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.good_price .price {
+    color: #e4393c;
+    font-size: 30rpx;
+}
+
+.tips2 {
+    display: flex;
+    padding: 20rpx 0;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.tips3 {
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-end;
+}
+.container2 {
+    display: flex;
+    flex-direction: column;
+    padding: 0 50rpx;
+    background: #fff;
+    margin-top: 25rpx;
+}
+
+.tipsT {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx 0;
+    font-size: 12px;
+}
+
+.container3 {
+    display: flex;
+    padding: 25rpx 50rpx;
+    background: #fff;
+    margin-top: 25rpx;
+    font-size: 12px;
+    justify-content: space-between;
+}
+
+.container4 {
+    display: flex;
+    padding: 25rpx 0;
+    background: #fff;
+    font-size: 12px;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.container4 .btn {
+    color: #fff;
+    background-color: rgb(233, 100, 100);
+    border-radius: 30px;
+    width: 250rpx;
+    font-size: 12px;
+    margin: 0;
+}

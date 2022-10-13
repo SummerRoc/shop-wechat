@@ -1,0 +1,28 @@
+<!--pages/coupon/coupon.wxml-->
+<scroll-view scroll-y="true" style="height: 90vh">
+  <view wx:if="{{show}}">
+    <view wx:for="{{myCoupons}}" wx:key="index" style="padding: 35rpx 100rpx; display: flex; justify-content: space-between;">
+      <view>
+        满
+        <text style="color: red;">{{item.achieve}}</text>
+        减
+        <text style="color: red;">{{item.reduce}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view wx:for="{{coupons}}" wx:key="index" style="padding: 35rpx 100rpx; display: flex; justify-content: space-between; align-items: center;">
+      <view>
+        满
+        <text style="color: red;">{{item.achieve}}</text>
+        减
+        <text style="color: red;">{{item.reduce}}</text>
+      </view>
+      <button disabled="{{item.operate == '已领取'}}" class="btn" data-id="{{item.coupon_id}}" data-index="{{index}}" bindtap="receiveCoupon">{{item.operate}}</button>
+    </view>
+  </view>
+  <view class="footNav">
+    <text class="{{show ? '' : 'active'}}" bindtap="getCoupon">领优惠券</text>
+    <text class="{{show ? 'active' : ''}}" bindtap="myCoupon">我的优惠券</text>
+  </view>
+</scroll-view>

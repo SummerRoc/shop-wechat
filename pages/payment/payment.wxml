@@ -1,0 +1,93 @@
+<!--pages/payment/payment.wxml-->
+<view class="address" bindtap="toShipAddress">
+    <view>
+        <text wx:if="{{default}}" style="font-size: 10px; color: #fff; background: red;">默认</text>
+        <text style="font-size: 13px;">{{defaultAddress.procince}}{{defaultAddress.city}}{{defaultAddress.area}}</text>
+    </view>
+    <text style="margin: 5px 0; font-size: 13px;">{{defaultAddress.detailed}}</text>
+    <text style="font-size: 13px;">{{defaultAddress.name}} {{defaultAddress.phone}}</text>
+</view>
+<image style="height: 5px; width: 100%;" src="../../image/bar.png"></image>
+<view style="background: rgb(245,245,245); height: 95vh;padding-top: 25rpx; ">
+    <view class="container1">
+        <view class='goods' wx:for="{{payGoodsArr}}" wx:key="index">
+            <image class='good_img' src='{{item.img}}'></image>
+            <view class='good_info'>
+                <view class='good_title'>
+                    <text>{{item.good_name}}</text>
+                </view>
+                <view class='good_title'>
+                    <text wx:for="{{item.sku}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs" style="color: rgb(184, 178, 178);">{{items}}，</text>
+                    <text style="color: rgb(184, 178, 178);">...</text>
+                </view>
+                <view class='good_price'>
+                    <text class='price'>￥{{item.price}}</text>
+                    <text style="font-size: 30rpx;">*{{item.num}}</text>
+                </view>
+                <view class="text1">
+                    <text>7天无理由退货(公开版拆封不支持;合约...</text>
+                </view>
+            </view>
+        </view>
+        <view class="tips2">
+            <text>配送</text>
+            <text>京东快递</text>
+        </view>
+        <view class="tips3">
+            <text>12月25日<text style="color: red;"> [圣诞节] </text>09:00-21:00</text>
+        </view>
+    </view>
+    <view class="container2">
+        <view class="tipsT">
+            <text>商品金额</text>
+            <text>￥{{totalMoney}}</text>
+        </view>
+        <view class="tipsT">
+            <text>运费（总重:0.320kg）</text>
+            <text>￥0.00</text>
+        </view>
+        <view bindtap="coupons" class="tipsT">
+            <view>
+                <text>优惠卷</text>
+                <!-- <text style="margin-left: 3px; font-size: 10px; color: rgb(226, 78, 78);border: 1px solid rgb(226, 78, 78); opacity: 0.8;">已选推荐优惠</text> -->
+            </view>
+            <text style="color: red;">-￥{{saveMoney}}</text>
+        </view>
+        <page-container bind:leave="leave" show="{{showCoupons}}" bind:clickoverlay="showcoupons" custom-style="height:70%">
+            <scroll-view style="height: 100%;" scroll-y="true">
+                <view style="text-align: center; padding: 40rpx;">优惠券</view>
+                <radio-group bindchange="newTest">
+                    <label wx:for="{{coupons}}" wx:key="index" style="padding: 25rpx; display: flex;">
+                        <radio disabled="{{item.disabled}}" style="transform: scale(0.6,0.6);" value="{{item.reduce}}"></radio>
+                        <view>
+                            满
+                            <text style="color: red;">{{item.achieve}}</text>
+                            减
+                            <text style="color: red;">{{item.reduce}}</text>
+                        </view>
+                    </label>
+                </radio-group>
+            </scroll-view>
+        </page-container>
+        <view class="tipsT">
+            <text>京豆</text>
+            <text>共165，满500可用</text>
+        </view>
+        <view class="tipsT">
+            <text>礼品卡(京东卡/E卡)</text>
+            <text>无可用</text>
+        </view>
+        <view style="display: flex; justify-content: flex-end; font-size: 12px; margin-top: 35rpx; padding-bottom: 30rpx;">
+            <text>合计:</text>
+            <text style="color: red;">￥{{finaMoney}}</text>
+        </view>
+    </view>
+    <view class="container3">
+        <text>发票</text>
+        <text>电子(商品明细-个人)</text>
+    </view>
+    <view class="container4">
+        <text style="color: red;">￥{{finaMoney}}</text>
+        <button bindtap="createOrder" class="btn">在线支付</button>
+    </view>
+</view>

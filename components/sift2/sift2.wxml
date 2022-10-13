@@ -1,0 +1,138 @@
+<!--components/sift2/sift2.wxml-->
+<view>
+    <view class="btn">
+        <view class="btn1" bindtap="showMenu1">
+            <text>综合</text>
+            <view class="corner"></view>
+        </view>
+        <view>销量</view>
+        <view class="btn1" bindtap="showMenu2">
+            <text>服务</text>
+            <view class="corner"></view>
+        </view>
+        <view bindtap="showSift" class="btn1">
+            <text>筛选</text>
+            <view class="corner"></view>
+        </view>
+    </view>
+    <page-container position="{{position}}" show="{{showPanel1 || showPanel2 || showView}}" custom-style="{{style1}}" bind:clickoverlay="test">
+        <view wx:if="{{showPanel1}}">
+            <view class="panel1-tips">综合</view>
+            <view class="panel1-tips">最新上架</view>
+            <view class="panel1-tips">价格最低</view>
+            <view class="panel1-tips">价格最高</view>
+            <view class="panel1-tips">评价最多</view>
+        </view>
+        <view wx:if="{{showPanel2}}">
+            <view wx:for="{{arr12}}" wx:key="index" class="panel1-tips">
+                <label>
+                    <checkbox style="transform: scale(0.6,0.6);" value="{{index}}" />
+                    {{item}}
+                </label>
+            </view>
+            <view class="footBtn">
+                <button style="color: red;">重置</button>
+                <button style="color: #fff; background: red;" type="warn">确认</button>
+            </view>
+        </view>
+        <scroll-view style="height: calc(100vh);" wx:if="{{showView}}" scroll-y="true">
+            <view style="padding: 10px; background: #fff; font-size: 15px;">配送至</view>
+            <view class="view2">
+                <text class="content2" wx:for="{{arr1}}" wx:key="index">{{item}}</text>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px;">分类</view>
+            <view class="view3">
+                <view style="padding: 10px;font-size: 15px;">价格</view>
+                <view class="content3">
+                    <input class="input1" type="number" placeholder="最低价" />
+                    <text style="color: rgb(219, 209, 209); margin: 0 8px;">一</text>
+                    <input class="input1" type="number" placeholder="最高价" />
+                    <text class="text3">
+                        1859-2420
+                        <text>17%选择</text>
+                    </text>
+                    <text class="text3">
+                        2420-3758
+                        <text>44%选择</text>
+                    </text>
+                    <text class="text3">
+                        3758-9000
+                        <text>32%选择</text>
+                    </text>
+                </view>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px;">品牌</view>
+            <view class="view4">
+                <text class="content2" wx:for="{{arr2}}" wx:key="index">{{item}}</text>
+                <text bindtap="toBrand" class="content2">查看全部</text>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px;">匹数</view>
+            <view class="view4">
+                <text class="content2" wx:for="{{arr3}}" wx:key="index">{{item}}</text>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px;">能效等级</view>
+            <view class="view4">
+                <text class="content2" wx:for="{{arr4}}" wx:key="index">{{item}}</text>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px;">类型</view>
+            <view class="view4">
+                <text class="content2">圆柱式</text>
+                <text class="content2">壁挂式</text>
+                <text class="content2">立柜式</text>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px;">变频/定频</view>
+            <view class="view4">
+                <text class="content2">变频</text>
+                <text class="content2">定频</text>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px;">冷暖类型</view>
+            <view class="view4">
+                <text class="content2">单冷</text>
+                <text class="content2">冷暖</text>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px;">操控方式</view>
+            <view class="view4">
+                <text class="content2">键控/遥控</text>
+                <text class="content2">APP遥控</text>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px;">净化类型</view>
+            <view class="view4">
+                <text class="content2" wx:for="{{arr5}}" wx:key="index">{{item}}</text>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px;">功能</view>
+            <view class="view4">
+                <text class="content2" wx:for="{{arr6}}" wx:key="index">{{item}}</text>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px;">用户优选</view>
+            <view class="view4">
+                <text class="content2" wx:for="{{arr7}}" wx:key="index">{{item}}</text>
+            </view>
+            <view style="padding: 10px; background: #fff; font-size: 15px; margin-top: 10px; text-align: center;">清除选项</view>
+        </scroll-view>
+    </page-container>
+    <scroll-view scroll-x="true" class="my">
+        <view class="test">京东物流</view>
+        <view class="test">新品</view>
+        <view class="test">
+            <view style="display: flex; justify-content: center;">
+                <view>品牌</view>
+                <view class="corner"></view>
+            </view>
+        </view>
+        <view class="test">
+            <view style="display: flex; justify-content: center;">
+                <view>匹数</view>
+                <view class="corner"></view>
+            </view>
+        </view>
+        <view class="test">
+            <view style="display: flex; justify-content: center;">
+                <view>能效等级</view>
+                <view class="corner"></view>
+            </view>
+        </view>
+        <view class="test">拍拍二手</view>
+        <view class="test">类型</view>
+        <view class="test">变频/定频</view>
+    </scroll-view>
+</view>

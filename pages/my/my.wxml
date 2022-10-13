@@ -1,0 +1,27 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <view class="tips1">
+    <image style="width: 50px; height: 50px;" src="{{icon}}"></image>
+    <text style="margin-left: 15px;">{{nick_name}}</text>
+  </view>
+  <view wx:if="{{loginBtn}}" class="tips2">
+    <button bindtap="getUserInfo">授权登录</button>
+  </view>
+  <view wx:else>
+    <view style="display: flex; justify-content: space-around; margin-top: 100rpx;">
+      <text>待付款</text>
+      <text>待收货</text>
+      <text>退还/售后</text>
+      <text bindtap="toOrders">全部订单</text>
+    </view>
+    <view style="display: flex; justify-content: space-around; margin-top: 100rpx;">
+      <view bindtap="toCoupon">
+        <view>优惠券</view>
+      </view>
+      <view>白条额度</view>
+      <view>京豆</view>
+      <view>红包</view>
+      <text>全部资产</text>
+    </view>
+  </view>
+</view>

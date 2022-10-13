@@ -1,0 +1,123 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<swiper class="swiper">
+    <swiper-item>
+        <image style="width: 100%; height: 100%; object-fit: cover;" src="{{goodInfo.img}}"></image>
+    </swiper-item>
+</swiper>
+<view class="container">
+    <view class="container1">
+        <text style="color: red;">￥{{goodInfo.price}}</text>
+        <view style="margin-top: 25rpx;">
+            <text style="font-size: 10px; color: #fff; background: red;">自营</text>
+            <text>{{goodInfo.good_name}}</text>
+        </view>
+        <view style="font-size: 12px; padding-right: 50rpx; margin-top: 25rpx;">
+            [机不可失] iPhone13系列商品限时优惠领券至高立减600元，赶快下单吧！！！点击
+            <text style="color: rgb(235, 145, 145); text-decoration: underline;">查看</text>
+        </view>
+    </view>
+    <view class="container2">
+        <text style="font-size: 13px;">优惠</text>
+        <view style="margin-left: 25rpx;">
+            <view>
+                <text class="test1">满6减5</text>
+                <text class="test1" style="margin-left: 15rpx;">满4000减600</text>
+            </view>
+            <view>
+                <text class="test1">免费领</text>
+                <text style="font-size: 13px;margin-left: 15rpx;">体验卡免费领，超大流量任性用</text>
+            </view>
+            <view>
+                <text class="test1">优惠套装</text>
+                <text style="font-size: 13px;margin-left: 15rpx;">该商品共有12款优惠套装</text>
+            </view>
+        </view>
+    </view>
+    <view class="container2" bindtap="showSKU">
+        <text style="font-size: 13px;">已选</text>
+        <view class="test2">
+            <view style="margin-top: -7rpx;">
+                <text wx:for="{{checkInfo.sku}}" wx:key="index" style="font-size: 12px;">{{item}}，</text>
+                <text style="font-size: 12px;">{{count}}个</text>
+            </view>
+            <view>
+                <text style="font-size: 12px; color: gray;">本商品支持京选服务，点击可选服务</text>
+            </view>
+        </view>
+    </view>
+    <page-container show="{{isShowSKU}}" position="bottom" bind:clickoverlay="clickoverlay" custom-style="height:60%">
+        <scroll-view style="height: 100%;" scroll-y="true">
+            <view class="page-container-view1">
+                <image style="width: 100px; height: 100px;" src="{{checkInfo.img}}"></image>
+                <view class="myNewTest1">
+                    <text style="color: red;">￥{{checkInfo.price}}</text>
+                    <view>
+                        <text style="font-size: 11px; color: rgb(194, 181, 181); margin-right: 10rpx;">已选</text>
+                        <text wx:for="{{checkInfo.sku}}" wx:key="index" style="font-size: 12px;">{{item}}，</text>
+                        <text style="font-size: 12px;">{{count}}个</text>
+                    </view>
+                </view>
+            </view>
+            <view class="sku">
+                <view wx:for="{{skuList.sku_column}}" wx:key="index">
+                    <view>{{item.key}}</view>
+                    <view class="{{item.check==indexs?'active':''}} myNewTest2" wx:for="{{item.value}}" wx:key="indexs" wx:for-item="items" wx:for-index="indexs" data-index="{{index}}" data-indexs="{{indexs}}" bindtap="skuBind1">{{items}}</view>
+                </view>
+            </view>
+            <view class="count">
+                <view>数量</view>
+                <view class="num_wrap">
+                    <button bindtap="subCount" disabled="{{count<=1}}" class='btn'>-</button>
+                    <input bindinput="inputCount" type='number' value="{{count}}" />
+                    <button bindtap="addCount" class='btn'>+</button>
+                </view>
+            </view>
+            <view>
+                <view style="font-size: 14px; padding: 50rpx 0 50px 30rpx;">京选服务</view>
+                <view style="padding-left: 30rpx;;">
+                    <image style="width: 350px; height: 920px;" src="../../image/nomol.png"></image>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="fitButton">
+            <button class="textBtn" bindtap="addShopCar" style="background: red;">加入购物车</button>
+            <button class="textBtn" style="background: orange; margin-left: 25rpx;">立即购买</button>
+        </view>
+    </page-container>
+    <view class="container3">
+        <view style="font-size: 13px; width: 60px;">送至</view>
+        <view class="test2">
+            <view style="margin-top: -7rpx;">
+                <text style="font-size: 12px;">四川成都市双流区xxx,xxxxx</text>
+            </view>
+            <view style="padding-right: 200rpx;">
+                <text style="font-size: 12px; color: red;">现货</text>
+                <text style="font-size: 12px; color: gray;">23:10前下单，预计明天(09月11日)送达，收防疫举措变化影响，您的订单配送时间可能会延长，请您耐心等待</text>
+            </view>
+        </view>
+    </view>
+    <view class="container3" style="font-size: 12px;">
+        重量
+        <text style="margin-left: 25rpx;">0.32kg</text>
+    </view>
+    <view class="container4">
+        <text>京东发货&售后</text>
+        <text>7天无理由退货（密封条损毁不支持，合约版不支持）</text>
+        <view>
+            不可使用全品奖券
+            <text style="margin-left: 20rpx;">次日达</text>
+            <text style="margin-left: 20rpx;">预约送货...</text>
+        </view>
+    </view>
+    <view class="container5">
+        <reply></reply>
+    </view>
+    <view class="fitBottom">
+        <view>店铺</view>
+        <view>客服</view>
+        <view class="fix">{{shoppingLength}}</view>
+        <view bindtap="toShoppingCar">购物车</view>
+        <view bindtap="openSku" class="textBtn" style="background: red; padding: 5px 15px;">加入购物车</view>
+        <view class="textBtn" style="background: orange; padding: 5px 15px;">立即购买</view>
+    </view>
+</view>

@@ -1,0 +1,18 @@
+/* pages/coupon/coupon.wxss */
+.footNav{
+  position: fixed;
+  bottom: 60rpx;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background: #fff;
+}
+.active{
+    color: red;
+}
+.btn{
+    width: 150rpx !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #fff;
+}

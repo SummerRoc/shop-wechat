@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "商品列表",
+    "usingComponents": {
+        "sift2": "/components/sift2/sift2"
+    }
+}

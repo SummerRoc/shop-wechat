@@ -1,0 +1,27 @@
+/* pages/shipAddress/shipAddress.wxss */
+.address {
+    padding: 40rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.address1{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    position: fixed;
+    bottom: 30rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btnTst{
+    background-color: rgb(223, 70, 70); 
+    border-radius: 30px;
+    color: #fff;
+    font-size: 12px;
+    margin: 0 !important;
+    width: 700rpx !important;
+}

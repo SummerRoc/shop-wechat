@@ -1,0 +1,25 @@
+<!--pages/shipAddress/shipAddress.wxml-->
+<view class="container">
+    <radio-group>
+        <view wx:for="{{addressArr}}" wx:key="index" class="address">
+            <label bindtap="change" data-item="{{item}}" style="display: flex;">
+                    <view style="transform: scale(0.6,0.6); width: 50px;">
+                        <radio checked="{{item.checked}}" value="{{index}}"></radio>
+                    </view>
+                    <view class="address1">
+                        <view>
+                            <text style="font-size: 13px;">{{item.procince}}{{item.city}}{{item.area}}</text>
+                        </view>
+                        <text style="padding: 7px 0; font-size: 13px;">{{item.detailed}}</text>
+                        <text style="font-size: 13px;">{{item.name}} {{item.phone}}</text>
+                    </view>
+            </label>
+            <view style="font-size: 11px; width: 50px;">
+                <text data-item="{{item}}" bindtap="toEditAddress">编辑</text>
+            </view>
+        </view>
+    </radio-group>
+    <view class="btn">
+        <button bindtap="addAddress" class="btnTst">新增收货地址</button>
+    </view>
+</view>

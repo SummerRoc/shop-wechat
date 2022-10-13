@@ -1,0 +1,17 @@
+/* pages/classifyDetail/classifyDetail.wxss */
+.goodList{
+    display: flex;
+    padding: 15rpx;
+}
+.img{
+    width: 120px;
+    height: 120px;
+}
+.goodsContent{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-left: 25rpx;
+}

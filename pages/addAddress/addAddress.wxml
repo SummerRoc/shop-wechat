@@ -1,0 +1,23 @@
+<!--pages/addAddress/addAddress.wxml-->
+<view class="container">
+    <view class="test">
+        <text>收货人</text>
+        <input bindinput="ibinput" data-myvalue="value1" class="input" value="" type="text" placeholder="请填写收货人姓名" />
+    </view>
+    <view class="test">
+        <text>联系方式</text>
+        <input bindinput="ibinput" data-myvalue="value2" class="input" value="" type="number" placeholder="请填写收货人手机号" />
+    </view>
+    <view class="test">
+        <text>所在地区</text>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+            <input class="input" value="{{value3}}" type="text" placeholder="省市区县、乡镇等" />
+        </picker>
+    </view>
+    <view class="test">
+        <text>详细地址</text>
+        <input bindinput="ibinput" data-myvalue="value4" class="input" value="" type="number" placeholder="街道、楼牌号等" />
+    </view>
+    <text style="font-size: 12px; color: gray;">提醒：每次下单会默认推荐使用该地址</text>
+    <button class="btn" bindtap="addAddress">确认</button>
+</view>

@@ -1,0 +1,19 @@
+<!--pages/classifyDetail/classifyDetail.wxml-->
+<sift2></sift2>
+<view class="goodList" wx:for="{{goodsList}}" data-goodid="{{item.good_id}}" wx:key="index" bindtap="goodInfo">
+    <view class="goodList">
+        <image class="img" src="{{item.img}}"></image>
+        <view class="goodsContent">
+            <text>{{item.good_name}}</text>
+            <view style="color: red;">
+                ￥{{item.price}}
+                <text style="font-size: 11px; color: red; border: 1px solid red;">领券满4000减600</text>
+            </view>
+            <view>
+                <text style="font-size: 10px; color: #fff; background: red;">自营</text>
+                400万+条评价 好评率96%
+            </view>
+            <text>Apple产品京东自营旗舰店</text>
+        </view>
+    </view>
+</view>
